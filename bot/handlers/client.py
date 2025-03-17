@@ -71,7 +71,7 @@ async def cmd_start(message: types.Message):
     if db.user_exists(message.from_user.id):
         # Если пользователь уже зарегистрирован, выводим информацию
         user_info = db.get_user_info(message.from_user.id)
-        msg += f"""
+        msg = f"""
 <b>{user_info['custom_name']}, ты когда-нибудь слышал о концепции 4000 недель?</b>
 Эта идея гласит, средняя продолжительность жизни — около 70 лет, что составляет ~4000 недель.\n
 Что ты почувствуешь, если узнаешь, на какой неделе ты <b>сейчас</b>?
