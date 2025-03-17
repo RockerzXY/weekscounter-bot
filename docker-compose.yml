@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: ./bot
+    container_name: weekscounter
+    restart: unless-stopped
+    environment:
+      - TOKEN=${TELEGRAM_TOKEN}
+      - TZ=${TIMEZONE}
+    volumes:
+      - ./db:/weekscounter/db
+      - ./logs:/weekscounter/logs
